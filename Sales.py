@@ -96,3 +96,6 @@ fig5 = px.scatter(
     
 )
 e.plotly_chart(fig5,use_container_width=True)
+st.subheader('Dynamic Table')
+st.caption('This table updates on your selected filters')
+st.dataframe(df_select[['Product','City','Month','Total']], use_container_width=True)
