@@ -60,6 +60,9 @@ fig2 = px.pie(
 b.plotly_chart(fig2,use_container_width=True)
 
 total_sales_by_month = df.groupby(['Month'])['Total'].sum().reset_index()
+month_order = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+total_sales_by_month['Month'] = pd.Categorical(total_sales_by_month['Month'], categories=month_order, ordered=True)
+total_sales_by_month = total_sales_by_month.sort_values('Month')
 
 fig3 = px.line(
     total_sales_by_month,
