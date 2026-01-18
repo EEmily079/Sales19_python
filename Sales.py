@@ -10,9 +10,10 @@ select_product = st.sidebar.multiselect(
     options= df['Product'].unique(),
     default = df['Product'].unique()
 )
+month_order = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 select_month = st.sidebar.multiselect(
     'Select Month',
-    options= df['Month'].unique(),
+    options= pd.Categorical(df['Month'].unique(), categories=month_order, ordered=True),
     default = df['Month'].unique()
 )
 select_city = st.sidebar.multiselect(
