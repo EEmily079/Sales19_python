@@ -11,10 +11,13 @@ select_product = st.sidebar.multiselect(
     default = df['Product'].unique()
 )
 month_order = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+# keep only months that exist in df, but follow month_order sequence
+available_months = [m for m in month_order if m in df['Month'].unique()]
+
 select_month = st.sidebar.multiselect(
     'Select Month',
-    options= pd.Categorical(df['Month'].unique(), categories=month_order, ordered=True),
-    default = df['Month'].unique()
+    options= available_months,
+    default = available_months
 )
 select_city = st.sidebar.multiselect(
     'Select City',
