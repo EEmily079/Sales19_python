@@ -8,17 +8,17 @@ st.sidebar.header ("Please Filter Here")
 select_product = st.sidebar.multiselect(
     'Select Product',
     options= df['Product'].unique(),
-    default = df['Product'].unique()[:5]
+    default = df['Product'].unique()
 )
 select_month = st.sidebar.multiselect(
     'Select Month',
     options= df['Month'].unique(),
-    default = df['Month'].unique()[:5]
+    default = df['Month'].unique()
 )
 select_city = st.sidebar.multiselect(
     'Select City',
     options= df['City'].unique(),
-    default = df['City'].unique()[:5]
+    default = df['City'].unique()
 )
 
 
